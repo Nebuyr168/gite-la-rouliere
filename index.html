@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gîte La Roulière de Beaulieu — 3 propositions de design</title>
+<meta name="description" content="Lieu de réception, salle des fêtes et gîte de 11 chambres (40 couchages) à Beaulieu-sous-Bressuire (79). Maquette en 3 styles." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Archivo:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============ RESET / GLOBAL ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0c0c0c;color:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer;border:none;background:none}
+.variant{display:none}
+.variant.active{display:block}
+
+/* ============ STYLE SWITCHER BAR ============ */
+.switcher{position:fixed;top:0;left:0;right:0;height:48px;z-index:9999;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:0 18px;background:rgba(14,16,18,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.1);font-family:'Archivo',sans-serif}
+.switcher .brand{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#fff;white-space:nowrap}
+.switcher .brand span{color:#c45a37}
+.switch-tabs{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.switch-tabs::-webkit-scrollbar{display:none}
+.switch-tab{font-size:12px;font-weight:600;color:#cfcfcf;padding:7px 13px;border-radius:999px;flex:none;
+  border:1px solid rgba(255,255,255,.16);transition:.2s;white-space:nowrap}
+.switch-tab.tab-tarifs{border-color:rgba(231,181,74,.6);color:#f0cd7d}
+.switch-tab.tab-tarifs.on{background:#e7b54a;color:#2a2105;border-color:#e7b54a}
+.switch-tab:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.switch-tab.on{background:#fff;color:#111;border-color:#fff}
+@media(max-width:640px){.switcher .brand{font-size:10px;letter-spacing:.08em}.switch-tab{padding:6px 9px;font-size:11px}}
+body{padding-top:48px}
+
+/* reveal */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+[data-reveal].in{opacity:1;transform:none}
+
+/* badge "À MODIFIER" sur les images placeholder (injecté en JS sur les images Unsplash) */
+.edit-badge{position:absolute;top:10px;right:10px;z-index:40;width:70px;height:70px;border-radius:50%;
+  background:#e11d2a;color:#fff;border:2px solid #fff;
+  display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.05;
+  font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:800;letter-spacing:.02em;text-transform:uppercase;
+  padding:6px;box-shadow:0 6px 18px rgba(0,0,0,.4);transform:rotate(-9deg);pointer-events:none;
+  animation:editPulse 1.8s ease-in-out infinite}
+@keyframes editPulse{0%,100%{box-shadow:0 6px 18px rgba(225,29,42,.45)}50%{box-shadow:0 6px 26px rgba(225,29,42,.9)}}
+
+/* ===================================================================== */
+/* ============ STYLE 1 — TERROIR CHIC (éditorial, clair, marque) ======= */
+/* ===================================================================== */
+#s1{--ink:#23211c;--cream:#f6f0e4;--cream2:#efe7d6;--teal:#2b5672;--teal-d:#1d3c50;--brick:#821f0f;--brick-l:#a8401f;
+  background:var(--cream);color:var(--ink);font-family:'Archivo',sans-serif;line-height:1.6}
+#s1 .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+#s1 .klabel{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+#s1 h1,#s1 h2,#s1 h3{font-family:'Fraunces',serif;font-weight:500;line-height:1.04;letter-spacing:-.01em}
+#s1 .serif-it{font-style:italic;font-weight:400}
+
+/* nav */
+#s1 .nav{position:sticky;top:48px;z-index:50;background:rgba(246,240,228,.86);backdrop-filter:blur(8px);border-bottom:1px solid rgba(35,33,28,.1)}
+#s1 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+#s1 .logo{font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:-.01em}
+#s1 .logo small{display:block;font-family:'Archivo';font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-top:-2px}
+#s1 .nav-links{display:flex;gap:30px;align-items:center}
+#s1 .nav-links a{font-size:14px;font-weight:500;color:var(--ink);opacity:.8;transition:.2s}
+#s1 .nav-links a:hover{opacity:1;color:var(--brick)}
+#s1 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 24px;border-radius:2px;transition:.25s;font-family:'Archivo'}
+#s1 .btn-brick{background:var(--brick);color:#fff}
+#s1 .btn-brick:hover{background:var(--brick-l);transform:translateY(-2px)}
+#s1 .btn-ghost{border:1px solid var(--ink);color:var(--ink)}
+#s1 .btn-ghost:hover{background:var(--ink);color:var(--cream)}
+@media(max-width:860px){#s1 .nav-links a{display:none}}
+
+/* hero */
+#s1 .hero{padding:64px 0 30px}
+#s1 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+#s1 .hero h1{font-size:clamp(42px,6vw,82px)}
+#s1 .hero .sub{font-size:19px;max-width:46ch;margin:26px 0 32px;color:#4a463c}
+#s1 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+#s1 .hero-figure{position:relative}
+#s1 .hero-figure img{width:100%;height:540px;object-fit:cover;border-radius:3px;filter:saturate(1.02)}
+#s1 .hero-badge{position:absolute;left:-22px;bottom:34px;background:var(--cream);padding:20px 24px;border-radius:3px;box-shadow:0 24px 50px rgba(35,33,28,.22);border-top:3px solid var(--teal)}
+#s1 .hero-badge b{font-family:'Fraunces';font-size:34px;display:block;line-height:1}
+#s1 .hero-badge span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:600}
+#s1 .motto{text-align:center;font-family:'Fraunces';font-style:italic;font-size:clamp(24px,3.4vw,40px);color:var(--teal);padding:54px 0;max-width:24ch;margin:0 auto;line-height:1.25}
+/* bloc éditorial "vue du ciel" — vidéo encadrée plus petite (downscale = net) */
+#s1 #s1-vue .ve-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:48px;align-items:center}
+#s1 .ve-text h2{font-size:clamp(28px,3.6vw,44px);margin:14px 0 16px}
+#s1 .ve-text .ve-p{color:#544f44;font-size:17px;max-width:42ch}
+#s1 .ve-media{position:relative;border-radius:3px;overflow:hidden;box-shadow:0 24px 50px rgba(35,33,28,.18)}
+#s1 .ve-media video{display:block;width:100%;height:420px;object-fit:cover}
+@media(max-width:860px){#s1 .hero-grid{grid-template-columns:1fr;gap:30px}#s1 .hero-figure img{height:380px}#s1 .hero-badge{left:14px}}
+@media(max-width:860px){#s1 #s1-vue .ve-grid{grid-template-columns:1fr;gap:24px}#s1 .ve-media video{height:300px}}
+
+/* espaces — rangées éditoriales alternées */
+#s1 .section{padding:40px 0}
+#s1 .sec-head{margin-bottom:38px;max-width:60ch}
+#s1 .sec-head h2{font-size:clamp(32px,4.2vw,52px);margin:14px 0}
+#s1 .sec-head p{color:#5a554a;font-size:17px}
+#s1 .row{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:34px 0;border-top:1px solid rgba(35,33,28,.14)}
+#s1 .row:nth-child(even) .row-media{order:2}
+#s1 .row-media img{width:100%;height:420px;object-fit:cover;border-radius:3px}
+#s1 .row-num{font-family:'Fraunces';font-size:15px;color:var(--brick);font-weight:600;letter-spacing:.1em}
+#s1 .row h3{font-size:32px;margin:10px 0 14px}
+#s1 .row p{color:#544f44;font-size:17px;margin-bottom:18px}
+#s1 .row ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px}
+#s1 .row li{font-size:13px;font-weight:600;padding:7px 13px;background:var(--cream2);border-radius:2px;color:var(--teal-d)}
+@media(max-width:860px){#s1 .row{grid-template-columns:1fr;gap:22px}#s1 .row:nth-child(even) .row-media{order:0}#s1 .row-media img{height:300px}}
+
+/* stats */
+#s1 .stats{background:var(--teal);color:var(--cream);margin:30px 0}
+#s1 .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:56px 28px}
+#s1 .stat b{font-family:'Fraunces';font-size:clamp(40px,5vw,60px);display:block;line-height:1}
+#s1 .stat span{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.82;margin-top:8px;display:block}
+@media(max-width:680px){#s1 .stats .wrap{grid-template-columns:1fr 1fr;gap:34px 20px}}
+
+/* prestations */
+#s1 .prest{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+#s1 .prest .card{border-top:2px solid var(--brick);padding-top:20px}
+#s1 .prest h3{font-size:23px;margin-bottom:10px}
+#s1 .prest p{font-size:15px;color:#544f44}
+#s1 .prest .price{display:inline-block;margin-top:12px;font-weight:600;color:var(--brick);font-size:14px}
+@media(max-width:760px){#s1 .prest{grid-template-columns:1fr}}
+
+/* gallery */
+#s1 .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:14px}
+#s1 .gal img{width:100%;height:100%;object-fit:cover;border-radius:3px;transition:.5s}
+#s1 .gal a:hover img{filter:brightness(.92) saturate(1.1)}
+#s1 .gal .tall{grid-row:span 2}
+#s1 .gal .wide{grid-column:span 2}
+@media(max-width:760px){#s1 .gal{grid-template-columns:1fr 1fr;grid-auto-rows:150px}#s1 .gal .wide{grid-column:span 2}}
+
+/* contact */
+#s1 .contact{background:var(--ink);color:var(--cream);margin-top:30px}
+#s1 .contact .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;padding:72px 28px}
+#s1 .contact h2{font-size:clamp(30px,4vw,46px);color:#fff}
+#s1 .contact .lead{color:#cbc6ba;margin:18px 0 26px;font-size:17px;max-width:42ch}
+#s1 .contact .info{display:flex;flex-direction:column;gap:16px;font-size:16px}
+#s1 .contact .info .l{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a948a;display:block;margin-bottom:3px}
+#s1 .contact a.big{color:#fff;font-family:'Fraunces';font-size:24px}
+@media(max-width:760px){#s1 .contact .wrap{grid-template-columns:1fr;gap:30px}}
+#s1 footer{background:var(--ink);color:#8c877d;font-size:13px;text-align:center;padding:26px;border-top:1px solid rgba(255,255,255,.08)}
+
+/* ===================================================================== */
+/* ============ STYLE 2 — FESTIF & STRUCTURÉ (mêmes couleurs, bento) ===== */
+/* ===================================================================== */
+#s2{--ink:#161a1d;--paper:#fbf7f0;--teal:#2b5672;--teal-d:#1b3a4f;--teal-dark:#15303f;--brick:#821f0f;--brick-l:#bd4a23;--gold:#e7b54a;
+  background:var(--paper);color:var(--ink);font-family:'Hanken Grotesk',sans-serif;line-height:1.55}
+#s2 .wrap{max-width:1200px;margin:0 auto;padding:0 26px}
+#s2 h1,#s2 h2,#s2 h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1;letter-spacing:-.02em}
+#s2 .chip{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+
+/* nav */
+#s2 .nav{position:sticky;top:48px;z-index:50;background:var(--teal-dark)}
+#s2 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+#s2 .logo{font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;color:#fff;letter-spacing:-.02em}
+#s2 .logo i{color:var(--gold);font-style:normal}
+#s2 .nav-links{display:flex;gap:26px;align-items:center}
+#s2 .nav-links a{font-size:14px;font-weight:600;color:#dfe6ea;transition:.2s}
+#s2 .nav-links a:hover{color:var(--gold)}
+#s2 .btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;padding:13px 22px;border-radius:12px;transition:.25s;font-family:'Hanken Grotesk'}
+#s2 .btn-brick{background:var(--brick);color:#fff;box-shadow:0 8px 22px rgba(130,31,15,.35)}
+#s2 .btn-brick:hover{background:var(--brick-l);transform:translateY(-2px)}
+#s2 .btn-light{background:#fff;color:var(--teal-dark)}
+#s2 .btn-light:hover{transform:translateY(-2px)}
+@media(max-width:860px){#s2 .nav-links a{display:none}}
+
+/* hero */
+#s2 .hero{background:var(--teal-dark);color:#fff;padding:64px 0 0;position:relative;overflow:hidden}
+#s2 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.5}
+#s2 .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(21,48,63,.55),rgba(21,48,63,.82)),radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:auto,26px 26px;pointer-events:none}
+#s2 .hero .wrap{position:relative;z-index:2}
+#s2 .hero h1{font-size:clamp(44px,7.4vw,104px);font-weight:800}
+#s2 .hero h1 em{font-style:normal;color:var(--gold)}
+#s2 .hero .sub{font-size:19px;max-width:50ch;margin:22px 0 28px;color:#dce6ec}
+#s2 .hero-cta{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:46px}
+#s2 .hero-bento{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-bottom:0;transform:translateY(34px)}
+#s2 .hero-bento .bx{border-radius:18px 18px 0 0;overflow:hidden;position:relative;height:230px}
+#s2 .hero-bento .bx:nth-child(1){grid-column:span 2}
+#s2 .hero-bento img{width:100%;height:100%;object-fit:cover}
+#s2 .hero-bento .bx span{position:absolute;left:14px;bottom:14px;background:rgba(21,48,63,.82);color:#fff;font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px;backdrop-filter:blur(4px)}
+@media(max-width:860px){#s2 .hero-bento{grid-template-columns:1fr 1fr}#s2 .hero-bento .bx:nth-child(1){grid-column:span 2}}
+
+/* marquee */
+#s2 .marquee{background:var(--brick);color:#fff;overflow:hidden;padding:13px 0;white-space:nowrap}
+#s2 .marquee .track{display:inline-block;animation:s2marq 26s linear infinite;font-family:'Bricolage Grotesque';font-weight:700;font-size:17px;letter-spacing:.02em}
+#s2 .marquee .track span{margin:0 26px;opacity:.95}
+#s2 .marquee .track span::after{content:"✦";margin-left:26px;color:var(--gold)}
+@keyframes s2marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+#s2 .section{padding:66px 0}
+#s2 .sec-head{text-align:center;max-width:62ch;margin:0 auto 46px}
+#s2 .sec-head .chip{background:rgba(43,86,114,.1);color:var(--teal)}
+#s2 .sec-head h2{font-size:clamp(34px,5vw,60px);font-weight:700;margin:16px 0}
+#s2 .sec-head p{color:#5b5f63;font-size:17px}
+
+/* espaces bento cards */
+#s2 .spaces{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+#s2 .scard{position:relative;border-radius:22px;overflow:hidden;min-height:340px;display:flex;align-items:flex-end;color:#fff;isolation:isolate}
+#s2 .scard:nth-child(1){grid-column:span 3}
+#s2 .scard:nth-child(2){grid-column:span 3}
+#s2 .scard:nth-child(3){grid-column:span 6;min-height:300px}
+#s2 .scard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:.6s}
+#s2 .scard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,48,63,0) 30%,rgba(15,32,42,.92) 100%);z-index:-1}
+#s2 .scard:hover img{transform:scale(1.06)}
+#s2 .scard .body{padding:30px}
+#s2 .scard .tag{background:var(--gold);color:#3a2a05;font-size:12px;font-weight:800;padding:5px 11px;border-radius:999px;display:inline-block;margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em}
+#s2 .scard h3{font-size:30px;font-weight:700;margin-bottom:8px}
+#s2 .scard p{font-size:15px;color:#e7eef2;max-width:52ch}
+@media(max-width:860px){#s2 .spaces{grid-template-columns:1fr}#s2 .scard,#s2 .scard:nth-child(1),#s2 .scard:nth-child(2),#s2 .scard:nth-child(3){grid-column:span 1}}
+
+/* stats chips band */
+#s2 .statband{background:var(--teal-dark);color:#fff}
+#s2 .statband .wrap{display:flex;flex-wrap:wrap;justify-content:space-around;gap:24px;padding:48px 26px;text-align:center}
+#s2 .statband .s b{font-family:'Bricolage Grotesque';font-size:clamp(38px,5vw,58px);font-weight:800;color:var(--gold);display:block;line-height:1}
+#s2 .statband .s span{font-size:13px;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-top:6px;display:block}
+
+/* prestations grid */
+#s2 .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+#s2 .pcard{background:#fff;border:1px solid #ece4d6;border-radius:18px;padding:26px;transition:.25s;box-shadow:0 2px 0 #ece4d6}
+#s2 .pcard:hover{transform:translateY(-4px);box-shadow:0 18px 36px rgba(43,86,114,.14);border-color:var(--teal)}
+#s2 .pcard .ic{width:48px;height:48px;border-radius:13px;background:rgba(130,31,15,.1);color:var(--brick);display:grid;place-items:center;font-size:22px;margin-bottom:16px}
+#s2 .pcard h3{font-size:20px;font-weight:700;margin-bottom:8px}
+#s2 .pcard p{font-size:14.5px;color:#5b5f63}
+#s2 .pcard .price{display:inline-block;margin-top:12px;background:rgba(231,181,74,.2);color:#7a5a10;font-weight:700;font-size:13px;padding:5px 11px;border-radius:8px}
+@media(max-width:860px){#s2 .pgrid{grid-template-columns:1fr}}
+
+/* gallery */
+#s2 .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+#s2 .gal a{border-radius:16px;overflow:hidden;aspect-ratio:1/1}
+#s2 .gal img{width:100%;height:100%;object-fit:cover;transition:.5s}
+#s2 .gal a:hover img{transform:scale(1.08)}
+@media(max-width:640px){#s2 .gal{grid-template-columns:1fr 1fr}}
+
+/* contact cta */
+#s2 .cta{margin:0 26px 0}
+#s2 .cta .inner{max-width:1200px;margin:0 auto;background:linear-gradient(135deg,var(--brick) 0%,#9c2d12 60%,#b8431f 100%);border-radius:30px;padding:64px 40px;text-align:center;color:#fff;position:relative;overflow:hidden}
+#s2 .cta .inner::after{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.08) 1px,transparent 1px);background-size:22px 22px}
+#s2 .cta h2{font-size:clamp(32px,4.6vw,54px);font-weight:800;position:relative}
+#s2 .cta p{margin:16px auto 26px;max-width:46ch;color:#ffe7df;font-size:18px;position:relative}
+#s2 .cta .row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+#s2 footer{background:var(--teal-dark);color:#b9c6cf;text-align:center;padding:40px 26px;margin-top:66px;font-size:14px}
+#s2 footer .big{font-family:'Bricolage Grotesque';color:#fff;font-size:22px;font-weight:800;margin-bottom:8px}
+#s2 footer a{color:var(--gold)}
+
+/* ===================================================================== */
+/* ============ STYLE 3 — FUTURISTE (sombre, néon maîtrisé) ============= */
+/* ===================================================================== */
+#s3{--bg:#080c11;--bg2:#0d141c;--panel:rgba(255,255,255,.04);--line:rgba(120,225,215,.18);
+  --cyan:#34e0d0;--cyan-d:#1fb9ab;--coral:#ff5a3c;--text:#dfe9ec;--mut:#8da3ab;
+  background:var(--bg);color:var(--text);font-family:'Sora',sans-serif;line-height:1.6;position:relative}
+#s3::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+   radial-gradient(60% 50% at 75% 8%,rgba(52,224,208,.16),transparent 70%),
+   radial-gradient(55% 45% at 12% 22%,rgba(255,90,60,.13),transparent 70%),
+   linear-gradient(180deg,var(--bg),var(--bg2))}
+#s3 .wrap{max-width:1200px;margin:0 auto;padding:0 26px;position:relative;z-index:2}
+#s3 .mono{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan)}
+#s3 h1,#s3 h2,#s3 h3{font-family:'Sora',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.02;color:#fff}
+#s3 .grain{position:fixed;inset:0;z-index:1;opacity:.5;pointer-events:none;
+  background-image:linear-gradient(rgba(120,225,215,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(120,225,215,.04) 1px,transparent 1px);
+  background-size:64px 64px;mask-image:radial-gradient(circle at 50% 0,#000,transparent 80%)}
+
+/* nav */
+#s3 .nav{position:sticky;top:48px;z-index:50;backdrop-filter:blur(12px);background:rgba(8,12,17,.7);border-bottom:1px solid var(--line)}
+#s3 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+#s3 .logo{font-weight:800;font-size:19px;color:#fff;display:flex;align-items:center;gap:9px}
+#s3 .logo .dot{width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 12px var(--cyan)}
+#s3 .nav-links{display:flex;gap:26px;align-items:center}
+#s3 .nav-links a{font-size:13px;font-weight:500;color:var(--mut);transition:.2s}
+#s3 .nav-links a:hover{color:var(--cyan)}
+#s3 .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:14px;padding:12px 22px;border-radius:10px;transition:.25s}
+#s3 .btn-cyan{background:linear-gradient(135deg,var(--cyan),var(--cyan-d));color:#03201d;box-shadow:0 0 0 1px rgba(52,224,208,.4),0 10px 30px rgba(52,224,208,.25)}
+#s3 .btn-cyan:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(52,224,208,.6),0 14px 38px rgba(52,224,208,.4)}
+#s3 .btn-glass{border:1px solid var(--line);color:#fff;background:var(--panel)}
+#s3 .btn-glass:hover{border-color:var(--cyan);color:var(--cyan)}
+@media(max-width:860px){#s3 .nav-links a{display:none}}
+
+/* hero */
+#s3 .hero{padding:80px 0 60px;text-align:center;position:relative;overflow:hidden}
+#s3 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.42}
+#s3 .hero-veil{position:absolute;inset:0;z-index:1;background:radial-gradient(75% 65% at 50% 28%,rgba(8,12,17,.35),rgba(8,12,17,.92))}
+#s3 .hero>.wrap{position:relative;z-index:2}
+#s3 .hero .mono{margin-bottom:22px}
+#s3 .hero h1{font-size:clamp(46px,8vw,108px)}
+#s3 .hero h1 .g{background:linear-gradient(120deg,var(--cyan),#7df0e4 40%,var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+#s3 .hero .sub{font-size:19px;color:var(--mut);max-width:54ch;margin:26px auto 32px}
+#s3 .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:54px}
+#s3 .hero-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+#s3 .hero-strip .gp{border:1px solid var(--line);border-radius:18px;overflow:hidden;position:relative;height:260px;background:var(--panel)}
+#s3 .hero-strip img{width:100%;height:100%;object-fit:cover;opacity:.86;transition:.5s}
+#s3 .hero-strip .gp:hover img{opacity:1;transform:scale(1.05)}
+#s3 .hero-strip .gp::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(8,12,17,.9))}
+#s3 .hero-strip .gp b{position:absolute;left:16px;bottom:14px;z-index:2;font-family:'JetBrains Mono';font-size:12px;color:var(--cyan);letter-spacing:.1em}
+@media(max-width:760px){#s3 .hero-strip{grid-template-columns:1fr}}
+
+#s3 .section{padding:70px 0;position:relative;z-index:2}
+#s3 .sec-head{max-width:64ch;margin-bottom:44px}
+#s3 .sec-head h2{font-size:clamp(32px,4.6vw,56px);margin:14px 0}
+#s3 .sec-head p{color:var(--mut);font-size:17px}
+
+/* espaces glass panels */
+#s3 .panels{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+#s3 .panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:0;overflow:hidden;transition:.3s;backdrop-filter:blur(6px)}
+#s3 .panel:hover{border-color:var(--cyan);transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 0 1px rgba(52,224,208,.25)}
+#s3 .panel .pimg{height:190px;position:relative;overflow:hidden}
+#s3 .panel .pimg img{width:100%;height:100%;object-fit:cover;opacity:.8}
+#s3 .panel .pimg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(13,20,28,.85))}
+#s3 .panel .pbody{padding:24px}
+#s3 .panel .num{font-family:'JetBrains Mono';font-size:12px;color:var(--coral);letter-spacing:.12em}
+#s3 .panel h3{font-size:23px;margin:8px 0 10px}
+#s3 .panel p{font-size:14.5px;color:var(--mut)}
+#s3 .panel .meta{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
+#s3 .panel .meta span{font-family:'JetBrains Mono';font-size:11px;color:var(--cyan);border:1px solid var(--line);padding:4px 9px;border-radius:7px}
+@media(max-width:860px){#s3 .panels{grid-template-columns:1fr}}
+
+/* stats */
+#s3 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+#s3 .stat{border:1px solid var(--line);border-radius:16px;padding:28px 22px;background:var(--panel);text-align:center}
+#s3 .stat b{font-size:clamp(38px,5vw,56px);font-weight:800;display:block;line-height:1;background:linear-gradient(120deg,#fff,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+#s3 .stat span{font-family:'JetBrains Mono';font-size:11px;color:var(--mut);letter-spacing:.12em;text-transform:uppercase;margin-top:10px;display:block}
+@media(max-width:680px){#s3 .stats{grid-template-columns:1fr 1fr}}
+
+/* prestations */
+#s3 .plist{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+#s3 .pl{display:flex;gap:18px;align-items:flex-start;border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--panel);transition:.25s}
+#s3 .pl:hover{border-color:var(--coral)}
+#s3 .pl .ic{font-size:24px;width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:rgba(255,90,60,.12);flex:none}
+#s3 .pl h3{font-size:18px;margin-bottom:6px}
+#s3 .pl p{font-size:14px;color:var(--mut)}
+#s3 .pl .price{font-family:'JetBrains Mono';font-size:12px;color:var(--cyan);margin-top:8px;display:inline-block}
+@media(max-width:760px){#s3 .plist{grid-template-columns:1fr}}
+
+/* gallery */
+#s3 .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:14px}
+#s3 .gal a{border-radius:14px;overflow:hidden;position:relative;border:1px solid var(--line)}
+#s3 .gal img{width:100%;height:100%;object-fit:cover;opacity:.82;transition:.5s}
+#s3 .gal a:hover img{opacity:1;transform:scale(1.06)}
+#s3 .gal .tall{grid-row:span 2}
+#s3 .gal .wide{grid-column:span 2}
+@media(max-width:760px){#s3 .gal{grid-template-columns:1fr 1fr;grid-auto-rows:140px}}
+
+/* contact */
+#s3 .contact .box{border:1px solid var(--line);border-radius:24px;background:linear-gradient(160deg,rgba(52,224,208,.07),rgba(255,90,60,.05));padding:48px 44px;backdrop-filter:blur(8px);display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start;position:relative;overflow:hidden}
+#s3 .contact .box::before{content:"";position:absolute;width:280px;height:280px;right:-90px;top:-90px;border-radius:50%;background:radial-gradient(circle,rgba(52,224,208,.22),transparent 70%);pointer-events:none}
+#s3 .contact h2{font-size:clamp(28px,4vw,46px);margin:12px 0 0;position:relative}
+#s3 .contact .lead{color:var(--mut);margin:14px 0 24px;font-size:16px;position:relative}
+/* formulaire devis */
+#s3 .devis{display:flex;flex-direction:column;gap:14px;position:relative}
+#s3 .devis .f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#s3 .devis label{display:flex;flex-direction:column;gap:6px;font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan)}
+#s3 .devis input,#s3 .devis textarea{font-family:'Sora',sans-serif;font-size:15px;color:#fff;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;padding:12px 14px;transition:.2s;width:100%}
+#s3 .devis input::placeholder,#s3 .devis textarea::placeholder{color:#5d717a}
+#s3 .devis input:focus,#s3 .devis textarea:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(52,224,208,.15);background:rgba(52,224,208,.05)}
+#s3 .devis textarea{resize:vertical;min-height:84px}
+#s3 .devis button{margin-top:4px;justify-content:center;width:100%}
+/* colonne infos */
+#s3 .contact .c-info{display:flex;flex-direction:column;gap:0;position:relative}
+#s3 .contact .ci{display:flex;flex-direction:column;gap:5px;padding:16px 0;border-bottom:1px solid var(--line)}
+#s3 .contact .ci:first-child{padding-top:0}
+#s3 .contact .ci .l{font-family:'JetBrains Mono';font-size:11px;color:var(--cyan);letter-spacing:.12em}
+#s3 .contact .ci .v{color:#fff;font-size:16px;font-weight:600;line-height:1.45}
+#s3 .contact .ci a.v:hover{color:var(--cyan)}
+#s3 .contact .call{justify-content:center;margin-top:22px}
+@media(max-width:760px){#s3 .contact .box{grid-template-columns:1fr;gap:30px;padding:32px 22px}#s3 .devis .f-row{grid-template-columns:1fr}}
+#s3 footer{text-align:center;color:var(--mut);padding:40px 26px;border-top:1px solid var(--line);margin-top:30px;position:relative;z-index:2;font-size:13px;font-family:'JetBrains Mono'}
+
+/* ===================================================================== */
+/* ============ TARIFS (grille commerciale — site VITRINE) ============= */
+/* ===================================================================== */
+#s4{--ink:#23211c;--cream:#f3ecdd;--card:#fffdf8;--teal:#2b5672;--teal-d:#1d3c50;--brick:#821f0f;--brick-l:#a8401f;--gold:#c8902f;
+  background:
+   radial-gradient(70% 50% at 100% 0,rgba(43,86,114,.10),transparent 60%),
+   radial-gradient(60% 45% at 0 100%,rgba(130,31,15,.07),transparent 60%),
+   var(--cream);
+  color:var(--ink);font-family:'Archivo',sans-serif;line-height:1.6;min-height:100vh}
+#s4 .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+#s4 .t-head{text-align:center;max-width:62ch;margin:0 auto;padding:60px 0 6px}
+#s4 .t-badge-vitrine{display:inline-block;margin-bottom:16px;background:var(--teal);color:#fff;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:8px 18px;border-radius:999px}
+#s4 .t-kicker{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--brick)}
+#s4 .t-head h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5vw,56px);line-height:1.05;margin:12px 0}
+#s4 .t-head p{color:#5a554a;font-size:17px}
+
+#s4 .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:42px 0 0;align-items:stretch}
+#s4 .plan{background:var(--card);border:1px solid #e6dcc8;border-radius:18px;padding:36px 28px;display:flex;flex-direction:column;position:relative;transition:.25s}
+#s4 .plan:hover{transform:translateY(-5px);box-shadow:0 24px 50px rgba(35,33,28,.14)}
+#s4 .plan.featured{border-color:var(--teal);box-shadow:0 18px 44px rgba(43,86,114,.18)}
+#s4 .plan .ptag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--brick);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px;white-space:nowrap}
+#s4 .plan.featured .ptag{background:var(--teal)}
+#s4 .plan .pname{font-family:'Fraunces',serif;font-size:27px;font-weight:600;line-height:1}
+#s4 .plan .pdesc{color:#6a6456;font-size:14px;margin:5px 0 18px}
+#s4 .plan .price{font-family:'Fraunces',serif;font-size:50px;font-weight:600;line-height:1;color:var(--teal-d)}
+#s4 .plan .price small{font-size:15px;color:#8a8473;font-weight:400}
+#s4 .plan ul{list-style:none;margin:22px 0;padding:0;display:flex;flex-direction:column;gap:11px;flex:1}
+#s4 .plan li{font-size:14.5px;color:#3f3b32;padding-left:26px;position:relative}
+#s4 .plan li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:800}
+#s4 .plan li.plus{font-weight:700;color:var(--ink)}
+#s4 .plan li.plus::before{content:"＋";color:var(--brick)}
+#s4 .plan .pbtn{display:inline-flex;justify-content:center;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:14px 22px;border-radius:3px;transition:.25s;cursor:pointer;text-align:center}
+#s4 .plan .pbtn-out{border:1px solid var(--ink);color:var(--ink)}
+#s4 .plan .pbtn-out:hover{background:var(--ink);color:var(--cream)}
+#s4 .plan.featured .pbtn{background:var(--teal);color:#fff}
+#s4 .plan.featured .pbtn:hover{background:var(--teal-d)}
+#s4 .plan .seemaq{margin-top:12px;text-align:center;font-size:13px;font-weight:600;color:var(--teal);cursor:pointer}
+#s4 .plan .seemaq:hover{color:var(--brick);text-decoration:underline}
+@media(max-width:880px){#s4 .plans{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
+
+#s4 .options{display:grid;grid-template-columns:1fr 1fr;gap:24px;padding:50px 0 72px}
+#s4 .opt{background:var(--card);border:1px solid #e6dcc8;border-radius:18px;padding:30px 30px 32px}
+#s4 .opt .otag{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brick)}
+#s4 .opt h3{font-family:'Fraunces',serif;font-size:25px;font-weight:600;margin:8px 0 10px}
+#s4 .opt p{color:#5a554a;font-size:15px}
+#s4 .opt .rate{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px dashed #ddd2bd}
+#s4 .opt .rate:last-of-type{border-bottom:none}
+#s4 .opt .rate b{font-family:'Fraunces',serif;font-size:23px;color:var(--teal-d);white-space:nowrap}
+#s4 .opt .rate span{color:#534e44;font-size:15px}
+#s4 .opt .devis-note{display:flex;align-items:center;gap:9px;margin-top:18px;font-weight:700;color:var(--brick);font-size:15.5px}
+#s4 .t-foot{text-align:center;color:#8a8473;font-size:13px;padding:26px 0 56px;max-width:70ch;margin:0 auto}
+#s4 .t-foot .fill{color:var(--brick);font-weight:700;background:rgba(225,29,42,.08);padding:2px 8px;border-radius:5px}
+@media(max-width:760px){#s4 .options{grid-template-columns:1fr}}
+
+/* ===================================================================== */
+/* ============ MODE IMPRESSION / PDF  (URL ?print=1) ================== */
+/* ===================================================================== */
+.printmode{padding-top:0 !important;background:#fff !important}
+.printmode .switcher{display:none !important}
+.printmode .variant{display:block !important}
+.printmode [data-reveal]{opacity:1 !important;transform:none !important}        /* annule les animations pour le PDF */
+.printmode .nav{position:static !important}
+.printmode #s3 .grain{display:none !important}
+.printmode #s3::before{position:absolute !important}
+.printmode .variant{break-before:page;page-break-before:always}
+.printmode #s1{break-before:auto;page-break-before:auto}
+/* bandeau de proposition (injecté en JS) */
+.printmode .print-label{padding:34px 30px 0;font-family:'Archivo',sans-serif;background:#fff}
+.printmode #s2 .print-label,.printmode #s3 .print-label{background:transparent}
+.printmode .print-label .pp-k{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#821f0f}
+.printmode #s3 .print-label .pp-k{color:#34e0d0}
+.printmode .print-label .pp-t{font-family:'Fraunces',serif;font-size:30px;margin-top:6px;color:#23211c}
+.printmode #s3 .print-label .pp-t{color:#fff}
+/* page de garde */
+.printmode .print-cover{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:linear-gradient(160deg,#23211c 0%,#1d3c50 55%,#2b5672 100%);color:#f6f0e4;page-break-after:always;break-after:page;padding:48px}
+.printmode .print-cover .pc-k{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:#e7b54a;font-weight:700;font-family:'Archivo',sans-serif}
+.printmode .print-cover h1{font-family:'Fraunces',serif;font-size:62px;font-weight:600;margin:18px 0 8px;line-height:1.02}
+.printmode .print-cover p{font-size:18px;color:#d8d2c4;max-width:52ch;margin:0 auto}
+.printmode .print-cover .pc-note{margin:34px auto 0;font-size:13px;color:#cdb9a4;border-top:1px solid rgba(255,255,255,.22);padding-top:18px;max-width:48ch}
+@media print{
+  html,body{background:#fff}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+  @page{size:1190px 1683px;margin:0}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ SWITCHER ============ -->
+<div class="switcher">
+  <div class="brand">La Roulière · <span>Maquette — Site VITRINE</span></div>
+  <div class="switch-tabs">
+    <button class="switch-tab on" data-s="1">01 · Terroir chic</button>
+    <button class="switch-tab" data-s="2">02 · Festif</button>
+    <button class="switch-tab" data-s="3">03 · Futuriste</button>
+    <button class="switch-tab tab-tarifs" data-s="4">💶 Tarifs</button>
+  </div>
+</div>
+
+<!-- ===================================================================== -->
+<!-- ============================ STYLE 1 ================================ -->
+<!-- ===================================================================== -->
+<main class="variant active" id="s1">
+  <nav class="nav"><div class="wrap">
+    <a class="logo" href="#s1-top">La Roulière<small>de Beaulieu · Deux-Sèvres</small></a>
+    <div class="nav-links">
+      <a href="#s1-lieu">Le lieu</a>
+      <a href="#s1-gite">Le gîte</a>
+      <a href="#s1-prest">Prestations</a>
+      <a href="#s1-gal">Galerie</a>
+      <a class="btn btn-brick" href="#s1-contact">Demander un devis</a>
+    </div>
+  </div></nav>
+
+  <header class="hero" id="s1-top"><div class="wrap hero-grid">
+    <div data-reveal>
+      <p class="klabel">Lieu de réception · Salle des fêtes · Gîte 11 chambres / 40 couchages</p>
+      <h1 style="margin-top:18px">Un seul lieu pour <span class="serif-it">toute</span> votre fête.</h1>
+      <p class="sub">À Beaulieu-sous-Bressuire, La Roulière réunit une salle de réception, une salle des fêtes et un gîte de 11 chambres pour un total de 40 couchages sur 5 000 m² de campagne close. Vos invités célèbrent, dansent et dorment sur place.</p>
+      <div class="hero-cta">
+        <a class="btn btn-brick" href="#s1-contact">Demander un devis</a>
+        <a class="btn btn-ghost" href="#s1-lieu">Découvrir le lieu</a>
+      </div>
+    </div>
+    <div class="hero-figure" data-reveal>
+      <img src="photos/Lieu.jpeg" alt="La cour du Gîte de la Roulière de Beaulieu" />
+      <div class="hero-badge"><b>11</b><span>chambres · 40 couchages</span></div>
+    </div>
+  </div></header>
+
+  <p class="motto" data-reveal>« Ensemble, faisons de votre séjour un moment inoubliable. »</p>
+
+  <section class="section" id="s1-lieu"><div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="klabel">Le lieu — trois espaces, un seul écrin</p>
+      <h2>Un domaine en trois parties, au calme de la campagne.</h2>
+      <p>Anciennes pierres réhabilitées, terrain clos de 5 000 m² : un cadre authentique pour anniversaires, baptêmes, cousinades, fêtes entre amis, séminaires et réceptions privées, à deux pas de Bressuire.</p>
+    </div>
+
+    <div class="row" data-reveal>
+      <div class="row-media"><img src="photos/Reunion.jpeg" alt="Salle de réception dressée"></div>
+      <div>
+        <span class="row-num">01 — Salle de réception</span>
+        <h3>L'ancienne étable, jusqu'à 70 convives.</h3>
+        <p>Sous les vieilles pierres, l'authenticité d'un lieu chargé d'histoire et une cuisine professionnelle entièrement équipée pour recevoir comme il se doit.</p>
+        <ul><li>70 personnes</li><li>Cuisine pro équipée</li><li>Caractère & pierres apparentes</li></ul>
+      </div>
+    </div>
+
+    <div class="row" data-reveal>
+      <div class="row-media"><img src="photos/Danse.jpeg" alt="Piste de danse en fête"></div>
+      <div>
+        <span class="row-num">02 — Salle des fêtes</span>
+        <h3>150 m² pour danser jusqu'au bout de la nuit.</h3>
+        <p>Une ancienne discothèque réhabilitée, pensée pour la fête : billard, coin salon, bar et grande piste de danse. De quoi ravir petits et grands.</p>
+        <ul><li>150 m²</li><li>Billard & coin salon</li><li>Bar</li><li>Piste de danse</li></ul>
+      </div>
+    </div>
+
+    <div class="row" id="s1-gite" data-reveal>
+      <div class="row-media"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="Chambre du gîte"></div>
+      <div>
+        <span class="row-num">03 — Le gîte</span>
+        <h3>11 chambres pour 40 couchages, tout le monde dort sur place.</h3>
+        <p>Onze chambres de 2 à 4 personnes en lits doubles ou superposés, dont une chambre PMR avec salle de bain. Vos invités prolongent la fête sans reprendre la route.</p>
+        <ul><li>11 chambres</li><li>40 couchages</li><li>Chambre PMR</li><li>Lits doubles & superposés</li></ul>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="stats"><div class="wrap">
+    <div class="stat" data-reveal><b>40</b><span>Couchages</span></div>
+    <div class="stat" data-reveal><b>70</b><span>Convives en réception</span></div>
+    <div class="stat" data-reveal><b>150</b><span>m² de salle des fêtes</span></div>
+    <div class="stat" data-reveal><b>5 000</b><span>m² de terrain clos</span></div>
+  </div></section>
+
+  <section class="section" id="s1-vue"><div class="wrap">
+    <div class="ve-grid">
+      <div class="ve-text" data-reveal>
+        <p class="klabel">Le domaine vu du ciel</p>
+        <h2>5 000 m² de campagne close, rien que pour vous.</h2>
+        <p class="ve-p">Un site clos, au calme, à deux pas de Bressuire — découvrez l'ensemble du domaine comme vos invités s'en souviendront.</p>
+      </div>
+      <div class="ve-media" data-reveal>
+        <video autoplay muted loop playsinline preload="metadata" poster="photos/Lieu.jpeg"><source src="photos/Drone.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" id="s1-prest"><div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="klabel">Prestations & animations</p>
+      <h2>Tout est prévu pour vos invités.</h2>
+    </div>
+    <div class="prest">
+      <div class="card" data-reveal>
+        <h3>Traiteur & repas</h3>
+        <p>Notre traiteur « Au Petit Brasseur » compose vos menus. Cochon à la broche, fouaces et tartes flambées (bientôt) pour régaler la tablée.</p>
+        <span class="price">Cochon à la broche dès 8,50 € / pers.</span>
+      </div>
+      <div class="card" data-reveal>
+        <h3>Bar & boissons</h3>
+        <p>Crémant, vins rouge, blanc, moelleux et rosé, cocktails à base de bière et recettes originales à base de vin : un bar pour tous les goûts.</p>
+        <span class="price">Sur devis</span>
+      </div>
+      <div class="card" data-reveal>
+        <h3>Animations</h3>
+        <p>Trottinettes électriques tout-terrain, olympiades, escape game et chasse au trésor : de quoi animer la journée comme la soirée.</p>
+        <span class="price">Sur devis</span>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="section" id="s1-gal"><div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="klabel">Galerie</p>
+      <h2>Aperçu du domaine.</h2>
+    </div>
+    <div class="gal" data-reveal>
+      <a><img class="" src="photos/Palets.jpeg" alt=""></a>
+      <a class="wide"><img src="photos/Volley.jpeg" alt=""></a>
+      <a><img src="photos/canap.jpeg" alt=""></a>
+      <a class="tall"><img src="photos/Boules.jpeg" alt=""></a>
+      <a><img src="photos/reu.jpeg" alt=""></a>
+      <a><img src="photos/Palets.jpeg" alt=""></a>
+      <a class="wide"><img src="photos/Lieu.jpeg" alt=""></a>
+    </div>
+  </div></section>
+
+  <section class="contact" id="s1-contact"><div class="wrap">
+    <div data-reveal>
+      <p class="klabel">Contact & réservation</p>
+      <h2>Parlons de votre événement.</h2>
+      <p class="lead">Christine et Vincent Turlot vous accueillent et construisent avec vous une formule sur mesure. Dites-nous votre date, on s'occupe du reste.</p>
+      <a class="btn btn-brick" href="tel:+33619780618">Appeler le 06 19 78 06 18</a>
+    </div>
+    <div class="info" data-reveal>
+      <div><span class="l">Adresse</span>La Roulière de Beaulieu<br>79300 Beaulieu-sous-Bressuire</div>
+      <div><span class="l">Téléphone</span><a class="big" href="tel:+33619780618">06 19 78 06 18</a></div>
+      <div><span class="l">E-mail</span><a class="big" href="mailto:contact@la-rouliere.fr">contact@la-rouliere.fr</a></div>
+      <div><span class="l">Suivez-nous</span>Facebook · Instagram @gitelarouliere</div>
+    </div>
+  </div></section>
+  <footer>© 2026 Gîte de la Roulière de Beaulieu — Agréé Jeunesse & Sport et Inspection académique · Christine & Vincent Turlot</footer>
+</main>
+
+<!-- ===================================================================== -->
+<!-- ============================ STYLE 2 ================================ -->
+<!-- ===================================================================== -->
+<main class="variant" id="s2">
+  <nav class="nav"><div class="wrap">
+    <a class="logo" href="#s2-top">LA ROULIÈRE<i>.</i></a>
+    <div class="nav-links">
+      <a href="#s2-lieu">Le lieu</a>
+      <a href="#s2-prest">Prestations</a>
+      <a href="#s2-gal">Galerie</a>
+      <a class="btn btn-brick" href="#s2-contact">Réserver une date</a>
+    </div>
+  </div></nav>
+
+  <header class="hero" id="s2-top">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="photos/Lieu.jpeg"><source src="photos/Drone.mp4" type="video/mp4"></video>
+    <div class="wrap">
+    <div data-reveal>
+      <span class="chip" style="background:rgba(255,255,255,.14);color:#fff">★ Lieu de réception en Deux-Sèvres</span>
+      <h1 style="margin:18px 0 0">La fête <em>en grand</em>,<br>dans un seul lieu.</h1>
+      <p class="sub">Salle de réception, salle des fêtes et gîte de 11 chambres (40 couchages) sur 5 000 m² clos, à deux pas de Bressuire. On célèbre, on danse, on dort sur place.</p>
+      <div class="hero-cta">
+        <a class="btn btn-brick" href="#s2-contact">Réserver une date</a>
+        <a class="btn btn-light" href="#s2-lieu">Voir les espaces</a>
+      </div>
+    </div>
+    <div class="hero-bento" data-reveal>
+      <div class="bx"><img src="photos/Reunion.jpeg" alt=""><span>Salle de réception</span></div>
+      <div class="bx"><img src="photos/Danse.jpeg" alt=""><span>Salle des fêtes</span></div>
+      <div class="bx"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt=""><span>Le gîte</span></div>
+    </div>
+  </div></header>
+
+  <div class="marquee"><div class="track">
+    <span>Anniversaires</span><span>Fêtes entre amis</span><span>Baptêmes</span><span>Cousinades</span><span>Séminaires</span><span>Réceptions privées</span><span>Anniversaires</span><span>Fêtes entre amis</span><span>Baptêmes</span><span>Cousinades</span><span>Séminaires</span><span>Réceptions privées</span>
+  </div></div>
+
+  <section class="section" id="s2-lieu"><div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="chip">Le lieu</span>
+      <h2>Trois espaces taillés pour recevoir.</h2>
+      <p>Anciennes pierres réhabilitées, terrain clos de 5 000 m², au calme de la campagne. Tout votre événement réuni au même endroit.</p>
+    </div>
+    <div class="spaces">
+      <article class="scard" data-reveal>
+        <img src="photos/Reunion.jpeg" alt="">
+        <div class="body"><span class="tag">70 convives</span><h3>Salle de réception</h3><p>L'ancienne étable et sa cuisine professionnelle équipée : l'authenticité des vieilles pierres pour vos repas de fête.</p></div>
+      </article>
+      <article class="scard" data-reveal>
+        <img src="photos/Danse.jpeg" alt="">
+        <div class="body"><span class="tag">150 m²</span><h3>Salle des fêtes</h3><p>Ancienne discothèque réhabilitée : billard, coin salon, bar et piste de danse pour danser jusqu'au bout de la nuit.</p></div>
+      </article>
+      <article class="scard" data-reveal>
+        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt="">
+        <div class="body"><span class="tag">40 couchages</span><h3>Le gîte — 11 chambres</h3><p>Dix chambres de 2 à 4 personnes (lits doubles ou superposés) plus une chambre PMR avec salle de bain. Tout le monde dort sur place.</p></div>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="statband"><div class="wrap">
+    <div class="s" data-reveal><b>40</b><span>Couchages</span></div>
+    <div class="s" data-reveal><b>70</b><span>Convives</span></div>
+    <div class="s" data-reveal><b>150 m²</b><span>Salle des fêtes</span></div>
+    <div class="s" data-reveal><b>5 000 m²</b><span>Terrain clos</span></div>
+    <div class="s" data-reveal><b>11</b><span>Chambres</span></div>
+  </div></section>
+
+  <section class="section" id="s2-prest"><div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="chip">Prestations & animations</span>
+      <h2>On s'occupe de tout.</h2>
+      <p>Repas, boissons et animations : composez la formule qui colle à votre événement.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pcard" data-reveal><div class="ic">🔥</div><h3>Cochon à la broche</h3><p>Notre traiteur « Au Petit Brasseur » régale la tablée. Fouaces et tartes flambées bientôt à la carte.</p><span class="price">dès 8,50 € / pers.</span></div>
+      <div class="pcard" data-reveal><div class="ic">🍷</div><h3>Bar & boissons</h3><p>Crémant, rouge, blanc, moelleux, rosé, cocktails à base de bière et recettes à base de vin.</p><span class="price">sur devis</span></div>
+      <div class="pcard" data-reveal><div class="ic">🛴</div><h3>Trottinettes tout-terrain</h3><p>Des trottinettes électriques tout-terrain pour explorer les 5 000 m² du domaine.</p><span class="price">sur devis</span></div>
+      <div class="pcard" data-reveal><div class="ic">🎯</div><h3>Olympiades</h3><p>Des défis en équipe pour souder le groupe, petits et grands.</p><span class="price">sur devis</span></div>
+      <div class="pcard" data-reveal><div class="ic">🗝️</div><h3>Escape game</h3><p>Une aventure grandeur nature à résoudre ensemble.</p><span class="price">sur devis</span></div>
+      <div class="pcard" data-reveal><div class="ic">🗺️</div><h3>Chasse au trésor</h3><p>Un parcours d'énigmes dans le domaine pour animer la journée.</p><span class="price">sur devis</span></div>
+    </div>
+  </div></section>
+
+  <section class="section" id="s2-gal" style="padding-top:0"><div class="wrap">
+    <div class="sec-head" data-reveal><span class="chip">Galerie</span><h2>L'ambiance en images.</h2></div>
+    <div class="gal" data-reveal>
+      <a><img src="photos/Palets.jpeg" alt=""></a>
+      <a><img src="photos/Boules.jpeg" alt=""></a>
+      <a><img src="photos/canap.jpeg" alt=""></a>
+      <a><img src="photos/reu.jpeg" alt=""></a>
+      <a><img src="photos/Lieu.jpeg" alt=""></a>
+      <a><img src="photos/Volley.jpeg" alt=""></a>
+    </div>
+  </div></section>
+
+  <section class="cta" id="s2-contact"><div class="inner" data-reveal>
+    <h2>Votre date est-elle libre ?</h2>
+    <p>Christine & Vincent Turlot vous répondent et bâtissent une formule sur mesure pour votre événement.</p>
+    <div class="row">
+      <a class="btn btn-light" href="tel:+33619780618">📞 06 19 78 06 18</a>
+      <a class="btn" style="background:#15303f;color:#fff" href="mailto:contact@la-rouliere.fr">✉️ contact@la-rouliere.fr</a>
+    </div>
+  </div></section>
+
+  <footer>
+    <div class="big">La Roulière de Beaulieu</div>
+    La Roulière de Beaulieu, 79300 Beaulieu-sous-Bressuire · Agréé Jeunesse & Sport et Inspection académique<br>
+    <a href="#">Facebook</a> · <a href="#">Instagram @gitelarouliere</a>
+  </footer>
+</main>
+
+<!-- ===================================================================== -->
+<!-- ============================ STYLE 3 ================================ -->
+<!-- ===================================================================== -->
+<main class="variant" id="s3">
+  <div class="grain"></div>
+  <nav class="nav"><div class="wrap">
+    <a class="logo" href="#s3-top"><span class="dot"></span>LA ROULIÈRE</a>
+    <div class="nav-links">
+      <a href="#s3-lieu">Le lieu</a>
+      <a href="#s3-prest">Prestations</a>
+      <a href="#s3-gal">Galerie</a>
+      <a class="btn btn-cyan" href="#s3-contact">Demander un devis</a>
+    </div>
+  </div></nav>
+
+  <header class="hero" id="s3-top">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="photos/Lieu.jpeg"><source src="photos/Drone.mp4" type="video/mp4"></video>
+    <div class="hero-veil"></div>
+    <div class="wrap">
+    <p class="mono" data-reveal>// Beaulieu-sous-Bressuire · Deux-Sèvres</p>
+    <h1 data-reveal>Recevez <span class="g">en grand.</span><br>Tout en un lieu.</h1>
+    <p class="sub" data-reveal>Salle de réception, salle des fêtes et gîte de 11 chambres (40 couchages) sur 5 000 m² de campagne close. Un domaine pensé pour vos événements, du repas à la dernière danse.</p>
+    <div class="hero-cta" data-reveal>
+      <a class="btn btn-cyan" href="#s3-contact">Demander un devis</a>
+      <a class="btn btn-glass" href="#s3-lieu">Explorer le domaine</a>
+    </div>
+    <div class="hero-strip" data-reveal>
+      <div class="gp"><img src="photos/Reunion.jpeg" alt=""><b>RÉCEPTION_70</b></div>
+      <div class="gp"><img src="photos/Danse.jpeg" alt=""><b>SALLE_DES_FÊTES_150M²</b></div>
+      <div class="gp"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt=""><b>GÎTE · 11 CHAMBRES · 40 COUCHAGES</b></div>
+    </div>
+  </div></header>
+
+  <section class="section" id="s3-lieu"><div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="mono">01 / Le lieu</p>
+      <h2>Trois espaces. Un domaine.</h2>
+      <p>Anciennes pierres réhabilitées et terrain clos de 5 000 m², au calme. Anniversaires, baptêmes, séminaires, cousinades : tout se passe au même endroit.</p>
+    </div>
+    <div class="panels">
+      <article class="panel" data-reveal>
+        <div class="pimg"><img src="photos/Reunion.jpeg" alt=""></div>
+        <div class="pbody"><span class="num">ESPACE 01</span><h3>Salle de réception</h3><p>L'ancienne étable et sa cuisine professionnelle équipée : le caractère des vieilles pierres pour vos repas.</p><div class="meta"><span>70 convives</span><span>Cuisine pro</span></div></div>
+      </article>
+      <article class="panel" data-reveal>
+        <div class="pimg"><img src="photos/Danse.jpeg" alt=""></div>
+        <div class="pbody"><span class="num">ESPACE 02</span><h3>Salle des fêtes</h3><p>Ancienne discothèque réhabilitée : billard, coin salon, bar et piste de danse sur 150 m².</p><div class="meta"><span>150 m²</span><span>Piste de danse</span><span>Bar</span></div></div>
+      </article>
+      <article class="panel" data-reveal>
+        <div class="pimg"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80" alt=""></div>
+        <div class="pbody"><span class="num">ESPACE 03</span><h3>Le gîte</h3><p>11 chambres de 2 à 4 personnes, dont une chambre PMR avec salle de bain. 40 couchages sur place.</p><div class="meta"><span>40 couchages</span><span>11 chambres</span><span>PMR</span></div></div>
+      </article>
+    </div>
+  </div></section>
+
+  <section class="section" style="padding-top:0"><div class="wrap">
+    <div class="stats">
+      <div class="stat" data-reveal><b>40</b><span>Couchages</span></div>
+      <div class="stat" data-reveal><b>70</b><span>Convives</span></div>
+      <div class="stat" data-reveal><b>150m²</b><span>Salle des fêtes</span></div>
+      <div class="stat" data-reveal><b>5000m²</b><span>Terrain clos</span></div>
+    </div>
+  </div></section>
+
+  <section class="section" id="s3-prest"><div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="mono">02 / Prestations</p>
+      <h2>Repas, bar & animations.</h2>
+      <p>Une offre modulable pour composer votre événement de A à Z.</p>
+    </div>
+    <div class="plist">
+      <div class="pl" data-reveal><div class="ic">🔥</div><div><h3>Cochon à la broche</h3><p>Traiteur « Au Petit Brasseur ». Fouaces et tartes flambées bientôt disponibles.</p><span class="price">dès 8,50 € / pers.</span></div></div>
+      <div class="pl" data-reveal><div class="ic">🍷</div><div><h3>Bar & boissons</h3><p>Crémant, vins, cocktails à base de bière et recettes à base de vin.</p><span class="price">sur devis</span></div></div>
+      <div class="pl" data-reveal><div class="ic">🛴</div><div><h3>Trottinettes tout-terrain</h3><p>Électriques, pour parcourir les 5 000 m² du domaine.</p><span class="price">sur devis</span></div></div>
+      <div class="pl" data-reveal><div class="ic">🎯</div><div><h3>Olympiades · Escape game · Chasse au trésor</h3><p>Des animations pour souder le groupe, de jour comme de nuit.</p><span class="price">sur devis</span></div></div>
+    </div>
+  </div></section>
+
+  <section class="section" id="s3-gal" style="padding-top:0"><div class="wrap">
+    <div class="sec-head" data-reveal><p class="mono">03 / Galerie</p><h2>Le domaine en images.</h2></div>
+    <div class="gal" data-reveal>
+      <a class="wide"><img src="photos/Lieu.jpeg" alt=""></a>
+      <a><img src="photos/Boules.jpeg" alt=""></a>
+      <a class="tall"><img src="photos/canap.jpeg" alt=""></a>
+      <a><img src="photos/reu.jpeg" alt=""></a>
+      <a><img src="photos/Lieu.jpeg" alt=""></a>
+      <a class="wide"><img src="photos/Volley.jpeg" alt=""></a>
+    </div>
+  </div></section>
+
+  <section class="section contact" id="s3-contact"><div class="wrap"><div class="box">
+    <div class="c-form" data-reveal>
+      <p class="mono">// Contact</p>
+      <h2>Réservons votre date.</h2>
+      <p class="lead">Christine &amp; Vincent Turlot construisent avec vous une formule sur mesure. Dites-nous votre projet, on vous répond vite.</p>
+      <form class="devis" onsubmit="return false">
+        <div class="f-row">
+          <label>Nom<input type="text" placeholder="Votre nom"></label>
+          <label>Téléphone<input type="tel" placeholder="06 00 00 00 00"></label>
+        </div>
+        <div class="f-row">
+          <label>E-mail<input type="email" placeholder="vous@email.fr"></label>
+          <label>Date souhaitée<input type="date"></label>
+        </div>
+        <label>Votre événement<textarea rows="3" placeholder="Type d'événement, nombre d'invités, besoins…"></textarea></label>
+        <button class="btn btn-cyan" type="submit">Envoyer la demande →</button>
+      </form>
+    </div>
+    <aside class="c-info" data-reveal>
+      <div class="ci"><span class="l">// Adresse</span><span class="v">La Roulière de Beaulieu<br>79300 Beaulieu-sous-Bressuire</span></div>
+      <div class="ci"><span class="l">// Téléphone</span><a class="v" href="tel:+33619780618">06 19 78 06 18</a></div>
+      <div class="ci"><span class="l">// E-mail</span><a class="v" href="mailto:contact@la-rouliere.fr">contact@la-rouliere.fr</a></div>
+      <div class="ci"><span class="l">// Réseaux</span><span class="v">Facebook · Instagram @gitelarouliere</span></div>
+      <a class="btn btn-glass call" href="tel:+33619780618">📞 Appeler maintenant</a>
+    </aside>
+  </div></div></section>
+  <footer>© 2026 LA_ROULIÈRE_DE_BEAULIEU · AGRÉÉ JEUNESSE & SPORT</footer>
+</main>
+
+<!-- ===================================================================== -->
+<!-- ======================= TARIFS (grille de vente) ==================== -->
+<!-- ===================================================================== -->
+<main class="variant" id="s4"><div class="wrap">
+  <div class="t-head" data-reveal>
+    <span class="t-badge-vitrine">Site vitrine — sur mesure</span>
+    <p class="t-kicker">Grille tarifaire</p>
+    <h2>Trois formules, un site clé en main.</h2>
+    <p>Chaque formule reprend la même structure (accueil, le lieu, prestations, galerie, contact), livrée 100 % responsive et mise en ligne. Le prix dépend du niveau de design et d'animations choisi.</p>
+  </div>
+
+  <div class="plans">
+    <div class="plan" data-reveal>
+      <span class="ptag">Classique</span>
+      <div class="pname">Terroir chic</div>
+      <div class="pdesc">Élégant &amp; éditorial</div>
+      <div class="price">700&nbsp;€<small> / site</small></div>
+      <ul>
+        <li>Site vitrine, multi-sections</li>
+        <li>100 % responsive (mobile · tablette · ordinateur)</li>
+        <li>Formulaire de contact</li>
+        <li>SEO de base + optimisation de la vitesse</li>
+        <li>Mise en ligne assistée</li>
+        <li>Design éditorial soigné, animations légères</li>
+      </ul>
+      <span class="seemaq" onclick="goStyle(1)">Voir la maquette →</span>
+    </div>
+
+    <div class="plan featured" data-reveal>
+      <span class="ptag">Recommandé</span>
+      <div class="pname">Festif</div>
+      <div class="pdesc">Dynamique &amp; vivant</div>
+      <div class="price">850&nbsp;€<small> / site</small></div>
+      <ul>
+        <li class="plus">Tout « Terroir chic », et en plus :</li>
+        <li>Design festif (bento, bandeau animé, couleurs)</li>
+        <li>Animations &amp; effets de survol travaillés</li>
+        <li>Mise en avant des espaces façon cartes</li>
+      </ul>
+      <span class="seemaq" onclick="goStyle(2)">Voir la maquette →</span>
+    </div>
+
+    <div class="plan" data-reveal>
+      <span class="ptag">Premium</span>
+      <div class="pname">Futuriste</div>
+      <div class="pdesc">Haut de gamme &amp; animé</div>
+      <div class="price">1&nbsp;000&nbsp;€<small> / site</small></div>
+      <ul>
+        <li class="plus">Tout « Festif », et en plus :</li>
+        <li>Direction futuriste (sombre, néon, glassmorphism)</li>
+        <li>Animations avancées &amp; effets de profondeur</li>
+        <li>Formulaire de devis stylé intégré</li>
+      </ul>
+      <span class="seemaq" onclick="goStyle(3)">Voir la maquette →</span>
+    </div>
+  </div>
+
+  <div class="options">
+    <div class="opt" data-reveal>
+      <span class="otag">Option · sur mesure</span>
+      <h3>Envie d'aller plus loin ?</h3>
+      <p>Réservation en ligne, galerie avancée, page multilingue, blog, connexion à vos réseaux… On échange ensemble sur vos besoins, sans engagement.</p>
+      <p class="devis-note">✉️ Écrivez-nous pour parler d'un potentiel devis.</p>
+    </div>
+
+    <div class="opt" data-reveal>
+      <span class="otag">Option · développement supplémentaire</span>
+      <h3>Du temps de code en plus</h3>
+      <p>Pour les ajouts et ajustements hors formule, facturés au temps réellement passé :</p>
+      <div class="rate"><span>30 minutes de développement</span><b>20&nbsp;€</b></div>
+      <div class="rate"><span>2 heures de développement</span><b>70&nbsp;€</b></div>
+      <div class="rate"><span>Au-delà</span><b>sur devis</b></div>
+    </div>
+  </div>
+
+</div></main>
+
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.switch-tab');
+  var variants=document.querySelectorAll('.variant');
+  function reveal(scope){
+    var els=scope.querySelectorAll('[data-reveal]');
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        /* révèle si visible OU déjà passé au-dessus du viewport (scroll rapide / ancres) */
+        if(e.isIntersecting || e.boundingClientRect.top < 0){
+          e.target.classList.add('in'); io.unobserve(e.target);
+        }
+      });
+    },{threshold:0,rootMargin:'0px 0px -10% 0px'});
+    els.forEach(function(el){ el.classList.remove('in'); io.observe(el); });
+  }
+  function show(n){
+    variants.forEach(function(v){ v.classList.toggle('active', v.id==='s'+n); });
+    tabs.forEach(function(t){ t.classList.toggle('on', t.dataset.s===String(n)); });
+    var el=document.getElementById('s'+n);
+    void el.offsetWidth;            /* reflow to restart animations */
+    window.scrollTo({top:0,behavior:'instant' in window?'instant':'auto'});
+    reveal(el);
+  }
+  tabs.forEach(function(t){ t.addEventListener('click',function(){ show(t.dataset.s); }); });
+  window.goStyle=function(n){ show(String(n)); };   /* utilisé par les boutons de la grille tarifaire */
+  reveal(document.getElementById('s1'));
+
+  /* Marque les images placeholder (Unsplash) avec un rond rouge "À MODIFIER".
+     Les vraies photos du gîte (wixstatic / fichiers locaux) ne sont PAS marquées. */
+  function markPlaceholders(){
+    document.querySelectorAll('img').forEach(function(img){
+      var isPlaceholder=/images\.unsplash\.com/.test(img.currentSrc||img.src);
+      var p=img.parentElement;
+      var existing=p.querySelector(':scope > .edit-badge');
+      if(isPlaceholder && !existing){
+        if(getComputedStyle(p).position==='static') p.style.position='relative';
+        var b=document.createElement('span');
+        b.className='edit-badge';
+        b.innerHTML='À<br>modifier';
+        p.appendChild(b);
+      } else if(!isPlaceholder && existing){
+        existing.remove();
+      }
+    });
+  }
+  markPlaceholders();
+
+  /* ===== Mode impression / PDF : ?print=1 → empile les 4 propositions + page de garde ===== */
+  if(/[?&]print/.test(location.search)){
+    document.body.classList.add('printmode');
+    /* allège le PDF : images placeholder en plus basse résolution (le site live n'est pas touché) */
+    document.querySelectorAll('img').forEach(function(img){
+      if(/images\.unsplash\.com/.test(img.src)){
+        var s=img.src.replace(/([?&])w=\d+/,'$1w=720');
+        s=/[?&]q=\d+/.test(s)?s.replace(/([?&])q=\d+/,'$1q=58'):s+'&q=58';
+        img.src=s;
+      }
+    });
+    var labels={
+      s1:['Proposition 01','Terroir chic — élégant & éditorial'],
+      s2:['Proposition 02','Festif — dynamique & vivant'],
+      s3:['Proposition 03','Futuriste — haut de gamme & animé'],
+      s4:['Grille tarifaire','Vos options & tarifs']
+    };
+    Object.keys(labels).forEach(function(id){
+      var v=document.getElementById(id); if(!v) return;
+      var d=document.createElement('div'); d.className='print-label';
+      d.innerHTML='<div class="pp-k">'+labels[id][0]+'</div><div class="pp-t">'+labels[id][1]+'</div>';
+      v.insertBefore(d, v.firstChild);
+    });
+    var cov=document.createElement('div'); cov.className='print-cover';
+    cov.innerHTML='<div><div class="pc-k">Site vitrine — 3 propositions</div>'+
+      '<h1>La Roulière de Beaulieu</h1>'+
+      '<p>Lieu de réception · salle des fêtes · gîte 11 chambres / 40 couchages — Beaulieu-sous-Bressuire</p>'+
+      '<div class="pc-note">Maquette de présentation. Les photos marquées « À modifier » sont provisoires et seront remplacées par vos propres photos.</div></div>';
+    var first=document.getElementById('s1');
+    first.parentNode.insertBefore(cov, first);
+  }
+})();
+</script>
+</body>
+</html>

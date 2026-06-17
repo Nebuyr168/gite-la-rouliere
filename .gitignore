@@ -1,0 +1,8 @@
+# Fichiers de travail — ne pas publier
+.claude/
+conversation.md
+tasks/
+_swap.py
+Drone_original_source.mp4
+La_Rouliere_propositions.pdf
+*.pdf
